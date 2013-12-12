@@ -13,6 +13,6 @@ How to use
 How to contribute
 -----------------
 
-Submit your desired changes or additions as a pull request, and try to keep it to one pull request per change so its easier to manage.
+Submit your desired changes as a pull request, and try to keep it to one pull request per change so its easier to manage.
 
 Please try to follow STL's coding style so we can keep it neat and clean, and most of all readable.
