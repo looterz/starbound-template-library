@@ -83,7 +83,7 @@ function math.EaseInOut( fProgress, fEaseIn, fEaseOut )
 
 	local fSumEase = fEaseIn + fEaseOut; 
 
-	if( fProgress == 0.0 || fProgress == 1.0 ) then return fProgress end
+	if( fProgress == 0.0 or fProgress == 1.0 ) then return fProgress end
 
 	if( fSumEase == 0.0 ) then return fProgress end
 	if( fSumEase > 1.0 ) then
@@ -197,6 +197,8 @@ function string.Explode(separator, str, withpattern)
 	return ret
 end
 
+string.explode = string.Explode -- alias
+
 --[[---------------------------------------------------------
 	Table Helpers
 -----------------------------------------------------------]]
@@ -275,9 +277,9 @@ end
 function table.Add( dest, source )
 
 	-- At least one of them needs to be a table or this whole thing will fall on its ass
-	if (type(source)!='table') then return dest end
+	if (type(source)~='table') then return dest end
 	
-	if (type(dest)!='table') then dest = {} end
+	if (type(dest)~='table') then dest = {} end
 
 	for k,v in pairs(source) do
 		table.insert( dest, v )
@@ -345,7 +347,7 @@ function table.Merge(dest, source)
 
 	for k,v in pairs(source) do
 	
-		if ( type(v) == 'table' && type(dest[k]) == 'table' ) then
+		if ( type(v) == 'table' and type(dest[k]) == 'table' ) then
 			-- don't overwrite one table with another;
 			-- instead merge them recurisvely
 			table.Merge(dest[k], v)
@@ -476,7 +478,7 @@ end
 function table.RemoveByValue( tbl, val )
 
 	local key = table.KeyFromValue( tbl, val )
-	if ( !key ) then return false end
+	if ( not key ) then return false end
 	
 	table.remove( tbl, key )
 	return key;

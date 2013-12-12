@@ -8,7 +8,7 @@ How to use
 
 * Clone starbound-template-library into your mods folder
 * Add mods/starbound-template-library to your Starbound bootstrap.config
-* Include starbound-template-library/helpers/stl.lua in your scripts array in your objects definition file
+* Include /helpers/stl.lua in your scripts array in your objects definition file
 
 How to contribute
 -----------------
